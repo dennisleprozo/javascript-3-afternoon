@@ -30,7 +30,20 @@
 */
 
 //Code Here
+class Employee{
+  constructor(first_name, last_name, email, age){
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+    this.makeWidget = function makeWidget() {
+      return first_name + ' ' + last_name + ' Widget';
+    }
+  }
+}
+var user = new Employee('Dennis', 'Leprozo', 'dennisleprozo@yahoo.com', 45);
 
+console.log(user)
 
 
 ////////// PROBLEM 2 //////////
@@ -40,17 +53,40 @@
   The manager has all the same properties as an Employee.
   Each manager has the following additional properties:
     - reports (other employees) that defaults to an empty array
+         
   Each manager has the following additional methods:
     - hire (employee)
+         
       - Accepts a new employee as a parameter and pushes it to their list of reports.
+      
     - fire (index)
-      - Fire removes employees from their list of reports at the given index
-
+    - Fire removes employees from their list of reports at the given index
+        
   Call your new class Manager
 */
 
 //Code Here
+class Manager{
+  constructor(first_name, last_name, email, age){
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.email = email;
+    this.age = age;
+    this.reports = []
+  }
+  makeWidget() {
+    return this.first_name + ' ' + this.last_name + ' Widget';
+  }
+  
+  hire(employee){
+    this.reports.push(employee)
+  }
+  fire(employee){
+    this.reports.splice(employee, 1)
+  }
+}
 
+var manager = ('The', 'Manager', 'themanager@yahoo.com', 55)
 
 
 ////////// PROBLEM 3 //////////
@@ -77,6 +113,32 @@
 
 //Code Here
 
+// class ProgManagers{
+//   constructor(first_name, last_name, email, age){
+//     this.first_name = first_name;
+//     this.last_name = last_name;
+//     this.email = email;
+//     this.age = age;
+//     this.reports = []
+//     this.title = 'Not a manager'
+//     this.bonus = 0
+//   }
+//   makeWidget() {
+//     return this.first_name + ' ' + this.last_name + ' Widget';
+//   }
+  
+//   hire(employee){
+//     this.reports.push(employee)
+//   }
+//   fire(employee){
+//     this.reports.splice(employee, 1)
+//   }
+// }
+
+// var manager = ('The', 'Manager', 'themanager@yahoo.com', 55)
+
+
+// }
 
 
 ////////// PROBLEM 4 - Black Diamond //////////
